@@ -1,0 +1,30 @@
+name: Company CI
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+      - name: Check project
+        run: |
+          test -f Dockerfile
+
+      - name: Build Docker Image
+        run: docker build -t company-site .
+
+      - name: Show Docker Images
+        run: docker images
