@@ -35,6 +35,5 @@ jobs:
 
       - name: Push image
         run: |
-          docker tag company-site pleemeyfrrr18/company-site:latest
-          docker push pleemeyfrrr18/company-site:latest
-
+          docker tag company-site katharsis267/company-site:latest
+          docker push katharsis267/company-site:latest
